@@ -1,0 +1,22 @@
+ShadowMario writes:
+
+Due to the building process i don't even know if this will go open sourced.
+
+I never really tested the game outside of my pc so i don't even know if the game will run properly.
+
+The person can try to but i think they'll need SFML installed (of course) to build the game. 
+
+I also think the player should have a good text editor or IDE (Integrated development environment). 
+
+I recommend Visual Studio code, but the player  can do what they want with this code.
+
+If the player knows what their supposed to do i don't see a issue here, i see a bright future of this game.
+
+The code name for this project was called *POG* because the game is pog. I thought it be funny to name this game something nobody would expect.
+
+Well don't waste your time reading this, you wanted to build the game lol. Go ahead im not gonna stop you.
+
+I just wanna thank PG350 for making this game what it is today, if he didn't show me a small snippet of a prototype he did, this game wouldn't exist.
+
+Shadow Mario - 2023
+
