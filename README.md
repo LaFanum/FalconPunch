@@ -16,6 +16,10 @@ After you did that get a good text editor, i reccomend [Visual Studio Code](http
 
 *WARNING!! YOU MUST DELETE THE OLD BIN FOLDER OR ELSE!!!!!* 
 
+Then run the Build.bat
+
+*side note: if the game won't run, run cmd into the root project and type *build.bat*
+
 If you get any erorrs dm me on discord!!!!
 
 ``Shadow Mario#9936``
