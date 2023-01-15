@@ -27,4 +27,4 @@ If you get any erorrs dm me on discord!!!!
 
 # IMPORTING SONGS!
 
-To do so, Go to the assets folder and import the Inst and Voices, Then run the build file.
+To do so, Go to the assets folder and import the Inst and Voices ALONG WITH THE CHART FILE, Then run the build file.
