@@ -12,7 +12,7 @@ I never tested this software on any other device before so i dont know if it wil
 
 You'll need a few things:
 
-* [Mingw32](https://www.mingw-w64.org/)
+* [Mingw32](https://sourceforge.net/projects/mingw//)
 * [SFML](https://www.sfml-dev.org/download/sfml/2.5.1/)
 * [Visual Studio Code](https://code.visualstudio.com/)
 
