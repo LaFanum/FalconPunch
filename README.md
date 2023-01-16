@@ -37,3 +37,6 @@ After that run `build.bat`
 How to import FNF charts it pretty simple.
 
 First make sure you have the **Inst**, **Voices** and the chart file. then go to assets and replace the old charts and run the game!
+------------------------------------
+
+You can request updates in the discord https://discord.gg/EK4nuQqc3b
