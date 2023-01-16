@@ -17,4 +17,4 @@ You'll need a few things:
 * [Visual Studio Code](https://code.visualstudio.com/)
 
 Once you install these clone the source code and type 'cmd' in the root project folder.
-After that run 'build.bat'
+After that run `build.bat`
