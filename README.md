@@ -10,21 +10,11 @@ I never tested this software on any other device before so i dont know if it wil
 
 # Building FalconPunch
 
-Okay so first, you need to install [SFML](https://www.sfml-dev.org/index.php)
+You'll need a few things:
 
-After you did that get a good text editor, i reccomend [Visual Studio Code](https://code.visualstudio.com/download) 
+* [Mingw32](https://www.mingw-w64.org/)
+* [SFML](https://www.sfml-dev.org/download/sfml/2.5.1/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 
-*WARNING!! YOU MUST DELETE THE OLD BIN FOLDER OR ELSE!!!!!* 
-
-Then run the Build.bat
-
-*side note: if the game won't run, run cmd into the root project and type *build.bat*
-
-If you get any erorrs dm me on discord!!!!
-
-``Shadow Mario#9936``
--------------------------------------------------------------------------------------------------------------------------------------------
-
-# IMPORTING SONGS!
-
-To do so, Go to the assets folder and import the Inst and Voices ALONG WITH THE CHART FILE, Then run the build file.
+Once you install these clone the source code and type 'cmd' in the root project folder.
+After that run 'build.bat'
