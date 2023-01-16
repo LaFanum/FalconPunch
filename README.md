@@ -1,4 +1,5 @@
-# FalconPunch
+# FalconPunch![iconFP](https://user-images.githubusercontent.com/93060246/212763483-60d1f408-f0a5-45cd-bd1d-0628d9065c92.png)
+
 
 A FNF chart player, good for fnf chart simulations.
 
@@ -7,9 +8,9 @@ This program is still in beta atm, so it might be buggy.
 
 # Credits
 
-* Shadow Mario - Programming 
-* PG350 - Extra programming help
-* FyreBlast - Logo and programming help
+* **Shadow Mario** - Programming 
+* **PG350** - Extra programming help
+* **FyreBlast** - Logo and programming help
 ------------------------------------------------
 
 I never tested this software on any other device before so i dont know if it will even run. But you'll need to have SFML installed. read below for building.
