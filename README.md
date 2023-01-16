@@ -27,6 +27,8 @@ You'll need a few things:
 
 Make sure you add MinGW to your environment variables!
 
+If you don't know how [Start Watching This](https://youtu.be/JsO58opI3SQ)
+
 Once you install these clone the source code and type 'cmd' in the root project folder.
 After that run `build.bat`
 ----------------------------------------------------------------------------
