@@ -8,7 +8,7 @@
 int main()
 {
     InitializeGlobals();
-    InitPlayState();
+   // InitPlayState();
     SetCurrentScene(&PlayState);
 
     while (window.isOpen())

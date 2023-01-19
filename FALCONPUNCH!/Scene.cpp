@@ -25,7 +25,16 @@ void SetCurrentSceneByName(std::string name)
 }
 
 Scene::Scene(std::string name)
-{ scenes[name] = this; }
+{ 
+    scenes[name] = this; 
+}
+
+Scene::Scene(std::string name, std::function<void()> init, std::function<void(double)> update)
+{
+    scenes[name] = this;
+    this->update = update;
+    this->init = init;
+}
 
 Scene::~Scene()
 { scenes.erase(GetSceneName(this));}

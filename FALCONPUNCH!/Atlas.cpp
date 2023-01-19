@@ -7,98 +7,120 @@
 #include <sstream>
 #include <array>
 
-std::string removeNumbers(std::string str)
+std::map<std::string, sf::Texture> textures;
+std::map<std::string, std::map<std::string, std::vector<AtlasFrame>>> texture_regions;
+sf::Sprite masterSprite;
+
+std::string removeNumbersOnStr(std::string str)
 {
-    int current = 0;
-    for(int i = 0; i< str.length(); i++){
-        if(!isdigit(str[i])){
-            str[current] = str[i];
-            current++;
+    std::string result;
+
+    for (char chr : str)
+    {
+        if (!std::isdigit(chr)) {
+            result += chr;
         }
     }
 
-    return str.substr(0,current);
+    return result;
 }
 
-void Atlas::LoadPNG(std::string path)
+void Atlas::SetTexture(std::string filename)
 {
-    text.loadFromFile(path + ".png");
-    sprite.setTexture(text);
-    size = sf::Vector2f(sprite.getLocalBounds().width, sprite.getLocalBounds().height);
-    sprite.setPosition(0, 50);
-
-    rapidxml::file<> file((path + ".xml").c_str());
-    rapidxml::xml_document<> doc;
-    doc.parse<0>(file.data());
-
-    rapidxml::xml_node<>* node = doc.first_node();
-
-        for (rapidxml::xml_node<> *child = node->first_node(); child; 
-        child = child->next_sibling())
+    if (textures.find(filename) == textures.end())
     {
-        const char* x = child->first_attribute("x")->value();
-        const char *y = child->first_attribute("y")->value();
-        const char *width = child->first_attribute("width")->value();
-        const char *height = child->first_attribute("height")->value();
-        std::string name = removeNumbers(child->first_attribute("name")->value());
-        int x2, y2, w, h;
-        std::stringstream strVal;
-        strVal << x; strVal >> x2;
-        std::stringstream strVal2;
-        strVal2 << y; strVal2 >> y2;
-        std::stringstream strVal3;
-        strVal3 << width; strVal3 >> w;
-        std::stringstream strVal4;
-        strVal4 << height; strVal4 >> h;
+        sf::Texture loadedTexture;
+        std::map<std::string, std::vector<AtlasFrame>> loadedRegions;
+        rapidxml::file<> xmlFile((filename + ".xml").c_str());
+        rapidxml::xml_document<> doc;
+        loadedTexture.loadFromFile(filename + ".png");
+        doc.parse<0>(xmlFile.data());
 
-        if (regions.find(name) == regions.end())
-        { regions[name] = {}; }
+        rapidxml::xml_node<>* textureAtlas = doc.first_node();
+        
+        for (
+            rapidxml::xml_node<> *node = textureAtlas->first_node(); 
+            node != NULL; node = node->next_sibling()
+        )
+        {
+            std::string nameWoutNums = removeNumbersOnStr(node->first_attribute("name")->value());
+            AtlasFrame frame;
 
-        regions[name].insert(regions[name].end(), sf::IntRect(x2, y2, w, h));
+            frame.x = std::stod(node->first_attribute("x")->value());
+            frame.y = std::stod(node->first_attribute("y")->value());
+            frame.w = std::stod(node->first_attribute("width")->value());
+            frame.h = std::stod(node->first_attribute("height")->value());
+
+            if (node->first_attribute("frameX")) {
+                frame.fx = std::stod(node->first_attribute("frameX")->value());
+                frame.fy = std::stod(node->first_attribute("frameY")->value());
+                frame.fw = std::stod(node->first_attribute("frameWidth")->value());
+                frame.fh = std::stod(node->first_attribute("frameHeight")->value());
+            }
+
+            if (loadedRegions.find(nameWoutNums) == loadedRegions.end()) loadedRegions[nameWoutNums] = {};
+            loadedRegions[nameWoutNums].push_back(frame);
+        }
+
+        texture_regions[filename] = loadedRegions;
+        textures[filename] = loadedTexture;
     }
 
-    delete node;
+    texture = filename;
+}
+
+void Atlas::PlayAnim(std::string animation)
+{
+    if (
+        texture_regions[this->texture].find(animation) == texture_regions[this->texture].end() ||
+        this->texture == ""
+    )
+        return;
+    
+    this->playing_ = true;
+    this->animation_ = animation;
+    this->frame_ = 0;
+    this->clock.restart();
 }
 
 void Atlas::Update()
 {
-    if (this->spr_clock.getElapsedTime().asMilliseconds() > 1000.0 / this->speed)
-    {
-        if (regions.find(animation) != regions.end())
-        {
-            this->spr_clock.restart();
-            this->frame += 1;
 
-            if (regions[animation.c_str()].size() - 1 < frame)
-            {
-                this->frame = 0;
-            }
+    if (this->clock.getElapsedTime().asSeconds() > 1.0 / this->speed && this->playing_)
+    {
+        this->frame_++;
+        this->clock.restart();
+
+        if (texture_regions[this->texture][this->animation_].size() >= this->frame_)
+        {
+            this->playing_ = this->loop;
+            
+            if (this->playing_) this->frame_ = 0; else this->frame_--;
         }
     }
-
-    sprite.setTextureRect(regions[animation][frame]);
 }
 
-void Atlas::Draw(sf::RenderWindow& win)
+void Atlas::Draw(sf::RenderTarget &target)
 {
-    win.draw(this->sprite);
+    AtlasFrame frame = texture_regions[this->texture][this->animation_][this->frame_];
+    sf::Vector2f pos = this->position - sf::Vector2f(frame.fx, frame.fy);
+
+    if (this->centered)
+    {
+        masterSprite.setOrigin(sf::Vector2f(frame.w/2, frame.h/2));
+    }
+
+    masterSprite.setPosition(pos);
+    masterSprite.setScale(this->scale);
+    masterSprite.setTexture(textures[this->texture]);
+    masterSprite.setTextureRect(sf::IntRect(frame.x, frame.y, frame.w, frame.h));
+    target.draw(masterSprite);
 }
 
-void Atlas::SetSize(sf::Vector2f resize)
+Atlas::Atlas()
 {
-    sprite.setScale(sf::Vector2f(resize.x/size.x,resize.y/size.y));
-    size = resize;
 }
 
-void Atlas::Play(std::string name)
+Atlas::~Atlas()
 {
-    if (regions.find(name.c_str()) == regions.end()) { return ;}
-    animation = name;
-    frame = 0;
-    spr_clock.restart();
-}
-
-void Atlas::SetPosition(sf::Vector2f position)
-{
-    sprite.setPosition(position);
 }

@@ -5,26 +5,48 @@
 #include <vector>
 #include <string>
 #include <array>
+#include <iostream>
+
+class AtlasFrame
+{
+    public:
+        double x;
+        double y;
+        double w;
+        double h;
+        double fx;
+        double fy;
+        double fw;
+        double fh;
+};
 
 class Atlas
 {
     private:
-        sf::Vector2f size;
-        sf::Texture text;
-        sf::Sprite sprite;
-        sf::Clock spr_clock;
-        std::array<int, 4> region;
-        std::map < std::string, std::vector<sf::IntRect>> regions;
-        int frame;
+        int frame_ = 0;
+        bool playing_ = false;
+
+        std::string texture;
+        std::string animation_;
+
+        sf::Clock clock;
     public:
-        int speed = 1;
-        std::string animation;
-        void Update();
-        void LoadPNG(std::string path);
-        void Draw(sf::RenderWindow& win);
-        void SetSize(sf::Vector2f resize);
-        void Play(std::string name);
-        void SetPosition(sf::Vector2f position);
+        sf::Vector2f position;
+        sf::Vector2f scale = {1.0f, 1.0f};
+
+        double speed = 10.0;
+
+        bool centered;
+        bool loop;
+
+        Atlas();
+        ~Atlas();
+
+        void SetTexture(std::string filename);
+        void PlayAnim(std::string animation);
+        void Update(); void Draw(sf::RenderTarget &target);
+        const std::string GetAnimation() { return this->animation_; }
+        const bool IsPlaying() { return this->playing_; }
 };
 
 #endif
