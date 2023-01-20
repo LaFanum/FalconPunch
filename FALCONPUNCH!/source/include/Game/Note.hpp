@@ -8,7 +8,7 @@ class Note
     Atlas atlas;
     double position;
     bool missed = false;
-    bool hit;
+    bool hit = false;
     int type;
     int length;
 };

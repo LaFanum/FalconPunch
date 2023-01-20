@@ -24,7 +24,7 @@ int main()
             }
         }
 
-        window.clear(sf::Color::Transparent);
+        window.clear(sf::Color::White);
         if (current_scene->update) {current_scene->update(delta);}
         window.display();
     }
