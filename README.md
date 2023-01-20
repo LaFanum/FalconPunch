@@ -11,6 +11,7 @@ This program is still in beta atm, so it might be buggy.
 * **Shadow Mario** - Programming 
 * **PG350** - Extra programming help
 * **FyreBlast** - Logo and programming help
+* **taes.lefttoe** - Being a good friend supporter
 ------------------------------------------------
 
 I never tested this software on any other device before so i dont know if it will even run. But you'll need to have SFML installed. read below for building.
