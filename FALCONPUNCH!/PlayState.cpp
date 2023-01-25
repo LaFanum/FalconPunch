@@ -61,7 +61,7 @@ void init()
 
     hud_view.setCenter(win_size.x / 2, win_size.y / 2);
     hud_view.setSize(sf::Vector2f(win_size));
- //   hudText.setFont(phantommuff);
+    hudText.setFont(phantommuff);
     inst.openFromFile("assets/Inst.ogg");
     vocals.openFromFile("assets/Voices.ogg");
 
@@ -168,6 +168,7 @@ auto desktop = sf::VideoMode::getDesktopMode();
 
 void update(double delta)
 {
+     window.clear(sf::Color(32, 32, 32));
     const double crochet = 60.0 / BPM;
     conductor_position = play_clock.getElapsedTime().asMilliseconds();
     conductor_In_secs = play_clock.getElapsedTime().asSeconds();

@@ -34,7 +34,7 @@ class Atlas
         sf::Vector2f position;
         sf::Vector2f scale = {1.0f, 1.0f};
 
-        double speed = 10.0;
+        double speed = 24.0;
 
         bool centered;
         bool loop;

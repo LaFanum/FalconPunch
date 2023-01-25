@@ -1,40 +1,71 @@
 #include <Game/Scene.hpp>
 #include <string>
-#include <map>
+#include <vector>
+#include <iostream>
+#include <algorithm>
 
-std::map<std::string, Scene*> scenes;
-Scene *current_scene;
+std::vector<Scene*> scenes;
+Scene* current_scene;
 
-std::string GetSceneName(Scene* scene)
+Scene* FindScene(std::string name)
 {
-    for (auto it = scenes.begin(); it != scenes.end(); it++)
-    { if (it->second == scene) { return it->first; } }
+    for (Scene* scene : scenes)
+    {
+        if (scene->GetName() == name) return scene;
+    }
+
+    return NULL;
 }
 
 void SetCurrentScene(Scene* scene)
 { 
-    current_scene = scene; 
-
-    if (current_scene->init) { current_scene->init(); }
+    current_scene = scene;
+    
+    if (current_scene->init)
+    {
+        current_scene->init();
+    }
 }
 
 void SetCurrentSceneByName(std::string name)
 { 
-    if (scenes.find(name) == scenes.end()) { return; }
-    SetCurrentScene(scenes[name]);
+    if (FindScene(name)) SetCurrentScene(FindScene(name));
 }
 
 Scene::Scene(std::string name)
-{ 
-    scenes[name] = this; 
+{
+    if (FindScene(name)) throw std::invalid_argument("Scene with name " + name + " already existed!");
+    this->name = name; scenes.push_back(this);
 }
 
 Scene::Scene(std::string name, std::function<void()> init, std::function<void(double)> update)
 {
-    scenes[name] = this;
-    this->update = update;
-    this->init = init;
+    if (FindScene(name)) throw std::invalid_argument("Scene with name " + name + " already existed!");    
+    this->init = init; this->update = update;
+    this->name = name; scenes.push_back(this);
 }
 
 Scene::~Scene()
-{ scenes.erase(GetSceneName(this));}
+{
+    scenes.erase(
+        std::remove(
+            scenes.begin(), scenes.end(), this
+        ), scenes.end()
+    );
+}
+
+const std::string Scene::GetName()
+{
+    return this->name;
+}
+
+void UpdateScene(double delta)
+{
+    if (current_scene)
+    {
+        if (current_scene->update)
+        {
+            current_scene->update(delta);
+        }
+    }
+}
