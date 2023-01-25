@@ -77,6 +77,8 @@ void title_update(double delta)
     int beat = int(time / (60.0 / title_BPM));
     window.clear(sf::Color(0, 0, 0));
 
+    // You can pretty much ignore whats happening at the bottom.
+
     if (!sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) titleAlreadyPressEnter = false;
 
     if (titleScreenState < 1)
