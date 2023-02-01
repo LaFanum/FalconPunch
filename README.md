@@ -8,8 +8,8 @@ This program is still in beta atm, so it might be buggy.
 
 # Credits
 
-* **Amogus** - Main Programmer 
-* **Shadow Mario** - Programmer
+* **KadaDev** - Main Programmer 
+* **Shadow Mario** - EX Programmer
 * **PG350** - Programmer
 * **FyreBlast** - Logo and programming help
 * **taes.lefttoe** - Being a good friend supporter
