@@ -8,7 +8,7 @@ This program is still in beta atm, so it might be buggy.
 
 # Credits
 
-* **KadaDev** - Main Programmer 
+* **Super-2008** - Main Programmer 
 * **Shadow Mario** - EX Programmer
 * **PG350** - Programmer
 * **FyreBlast** - Logo and programming help
