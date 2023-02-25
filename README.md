@@ -8,7 +8,7 @@ This program is still in beta atm, so it might be buggy.
 
 # Credits
 
-* **Super-2008** - Main Programmer 
+* **Snoopy** - Main Programmer 
 * **Shadow Mario** - EX Programmer
 * **PG350** - Programmer
 * **FyreBlast** - Logo and programming help
@@ -16,6 +16,8 @@ This program is still in beta atm, so it might be buggy.
 ------------------------------------------------
 
 I never tested this software on any other device before so i dont know if it will even run. But you'll need to have SFML installed. read below for building.
+
+The game now works for codeblocks due to the easier debugging.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -25,7 +27,7 @@ You'll need a few things:
 
 * [Mingw32](https://sourceforge.net/projects/mingw//)
 * [SFML](https://www.sfml-dev.org/download/sfml/2.5.1/)
-* [Visual Studio Code](https://code.visualstudio.com/)
+* [Code Blocks]https://sourceforge.net/projects/codeblocks/)
 
 Make sure you add MinGW to your environment variables!
 
