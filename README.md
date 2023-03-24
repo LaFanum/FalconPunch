@@ -4,11 +4,12 @@
 A FNF chart player, good for fnf chart simulations.
 
 This program is still in beta atm, so it might be buggy.
+This Program is now discontiued. 
 -----------------------------------------------------------
 
 # Credits
 
-* **Snoopy** - Main Programmer 
+* **Ice Cube** - Main Programmer 
 * **Shadow Mario** - EX Programmer
 * **PG350** - Programmer
 * **FyreBlast** - Logo and programming help
