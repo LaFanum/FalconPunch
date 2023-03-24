@@ -28,7 +28,7 @@ You'll need a few things:
 
 * [Mingw32](https://sourceforge.net/projects/mingw//)
 * [SFML](https://www.sfml-dev.org/download/sfml/2.5.1/)
-* [Code Blocks]https://sourceforge.net/projects/codeblocks/)
+* [Code Blocks](https://sourceforge.net/projects/codeblocks/)
 
 Make sure you add MinGW to your environment variables!
 
