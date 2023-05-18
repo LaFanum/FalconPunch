@@ -3,12 +3,12 @@
 
 A FNF chart player, good for fnf chart simulations.
 
-This Program is now discontiued. 
+# THIS SOFTWARE IS NO LONGER IN DEV!!!!!!!!!!!!
 -----------------------------------------------------------
 
 # Credits
 
-* **Naughty Dog** - Main Programmer 
+* **wildyizlost** - Main Programmer 
 * **Shadow Mario** - EX Programmer
 * **PG350** - Programmer
 * **FyreBlast** - Logo and programming help
