@@ -8,7 +8,7 @@ A FNF chart player, good for fnf chart simulations.
 
 # Credits
 
-* **wildyizlost** - Main Programmer 
+* **ElijahZGX** - Main Programmer 
 * **Shadow Mario** - EX Programmer
 * **PG350** - Programmer
 * **FyreBlast** - Logo and programming help
