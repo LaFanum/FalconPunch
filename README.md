@@ -3,16 +3,16 @@
 
 A FNF chart player, good for fnf chart simulations.
 
-# THIS SOFTWARE IS NO LONGER IN DEV!!!!!!!!!!! But Somthing cooler is in the works
+# THIS SOFTWARE IS NO LONGER IN DEV!!!!!!!!!!! But something cooler is in the works
 
 -----------------------------------------------------------
 
 # Credits
 
-* **ElijahZGX** - Main Programmer 
-* **EyeBallPupil** -  Programmer
+* **phlux** - Main Programmer 
+* **Pixelated.** -  Programmer
 * **PG350** - Programmer
-* **FyreBlast** - Logo and programming help
+* **Cupcake_Ninja24** - Logo and programming help
 * **taes.lefttoe** - Being a good friend supporter
 ------------------------------------------------
 
