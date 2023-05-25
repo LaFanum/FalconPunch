@@ -9,11 +9,10 @@ A FNF chart player, good for fnf chart simulations.
 
 # Credits
 
-* **phlux** - Main Programmer 
+* **hyphlox** - Main Programmer 
 * **Pixelated.** -  Programmer
 * **PG350** - Programmer
 * **Cupcake_Ninja24** - Logo and programming help
-* **taes.lefttoe** - Being a good friend supporter
 ------------------------------------------------
 
 I never tested this software on any other device before so i dont know if it will even run. But you'll need to have SFML installed. read below for building.
