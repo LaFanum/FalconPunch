@@ -3,7 +3,7 @@
 
 A FNF chart player, good for fnf chart simulations.
 
-# THIS SOFTWARE IS NO LONGER IN DEV!!!!!!!!!!! But something cooler is in the works
+# New Updates Are On the way, trying to make this engine better ASAP
 
 -----------------------------------------------------------
 
