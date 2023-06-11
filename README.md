@@ -11,7 +11,7 @@ A FNF chart player, good for fnf chart simulations.
 
 * **Rattus** - Main Programmer 
 * **Pixelated.** -  Programmer
-* **hash_slider** - Programmer/Lua Porter
+* **hash_slider** -Programmer
 * **PG350** - Programmer
 * **Cupcake_Ninja24** - Logo and programming help
 ------------------------------------------------
