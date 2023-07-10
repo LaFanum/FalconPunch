@@ -89,9 +89,9 @@ void title_update(double delta)
 
             if (IntInRange(beat, 3, 3))
             {
-                DrawIntroTextWithString("Amogus", 1);
-                DrawIntroTextWithString("Shadow Mario", 2);
-                DrawIntroTextWithString("PG350", 3);
+                DrawIntroTextWithString("Rattus", 1);
+                DrawIntroTextWithString("_DARK_", 2);
+                DrawIntroTextWithString("Kunoguti", 3);
             }
         }
         else if (IntInRange(beat, 4, 7))
