@@ -9,9 +9,9 @@ A FNF chart player, good for fnf chart simulations.
 
 # Credits
 
-* **Rattus** - Main Programmer 
+* **mellotbh** - Main Programmer 
 * **_DARK_.** -  Programmer
-* **Kunguti** -Programmer
+* **wildicaleb** -Programmer
 * **PG350** - Programmer
 * **Cupcake_Ninja24** - Logo and programming help
 ------------------------------------------------
