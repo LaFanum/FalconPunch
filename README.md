@@ -9,7 +9,7 @@ A FNF chart player, good for fnf chart simulations.
 
 # Credits
 
-* **mellotbh** - Main Programmer 
+* **M&Mz** - Main Programmer 
 * **_DARK_.** -  Programmer
 * **wildicaleb** -Programmer
 * **PG350** - Programmer
@@ -18,7 +18,6 @@ A FNF chart player, good for fnf chart simulations.
 
 I never tested this software on any other device before so i dont know if it will even run. But you'll need to have SFML installed. read below for building.
 
-The game now works for codeblocks due to the easier debugging.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
