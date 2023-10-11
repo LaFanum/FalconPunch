@@ -9,7 +9,7 @@ A FNF chart player, good for fnf chart simulations.
 
 # Credits
 
-* **hazda** - Main Programmer 
+* **Beans** - Main Programmer 
 * **_DARK_.** -  Programmer
 * **wildicaleb** -Programmer
 * **PG350** - Programmer
