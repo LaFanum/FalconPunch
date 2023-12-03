@@ -89,7 +89,7 @@ void title_update(double delta)
 
             if (IntInRange(beat, 3, 3))
             {
-                DrawIntroTextWithString("Beans", 1);
+                DrawIntroTextWithString("COCHI$E", 1);
                 DrawIntroTextWithString("_DARK_", 2);
                 DrawIntroTextWithString("Kunoguti", 3);
             }
